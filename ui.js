@@ -49,7 +49,7 @@ function Render() {
 
     var dataURL = artboardCanvas.toDataURL("image/png");
     var link = document.createElement('a');
-    link.download = "ai_PngExport.png";
+    link.download = "EinsteinExport.png";
     link.href = artboardCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
     link.click();
 }
