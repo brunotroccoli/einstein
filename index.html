@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <!-- default head -->
+        <title>EINSTEIN AI</title>
+
+        <!-- meta -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="icon" href="einstein/favicon.png">
+
+        <!-- css libraries -->
+        <link rel="stylesheet" href="libraries/bulma.min.css">
+        <link rel="stylesheet" href="libraries/phosphor-icons.css">
+        <link rel="stylesheet" href="libraries/fancybox.css"/>
+
+        <!-- js libraries -->
+        <script src="libraries/jquery.min.js"></script>
+        <script src="libraries/jscolor.min.js"></script>
+        <script src="libraries/fabric.min.js"></script>
+        <script src="libraries/fancybox.umd.js"></script>
+
+        <!-- custom css -->
+        <link rel="stylesheet" href="einstein/style.css">
+
+        <!-- custom font -->
+        <link href='https://fonts.googleapis.com/css?family=Poppins|Roboto|Oswald|Arial|Lobster|Pacifico|Satisfy|Bangers|Audiowide|Sacramento' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+
+        <!-- imagine motion -->
+        <div class="imagine-motion">
+            <div class="load">
+                <span class="loader"></span>
+                <div class="clear-loader"></div>
+                <p>imagining</p>
+            </div>
+        </div>
+
+        <!-- ai create -->
+        <canvas id="element"  class="canvas"></canvas>
+        <canvas id="artboard" class="canvas"></canvas>
+
+        <!-- UI -->
+        <ul class="tools">
+            <li>
+                <button onclick="Imagine();">
+                    <div class="tools-button">
+                        <i class="ph-atom-thin"></i>
+                        <br>
+                        Imagine
+                    </div>
+                </button>
+            </li>
+
+            <li>
+                <button onclick="MachineLearning();">
+                    <div class="tools-button">
+                        <i class="ph-cpu-thin"></i>
+                        <br>
+                        Design
+                    </div>
+                </button>
+            </li>
+
+            <li>
+                <button onclick="Render();">
+                    <div class="tools-button">
+                        <i class="ph-image-thin"></i>
+                        <br>
+                        Export
+                    </div>
+                </button>
+            </li>
+
+            <li>
+                <button onclick="Dashboard();">
+                    <div class="tools-button">
+                        <i class="ph-dots-nine-thin"></i>
+                        <br>
+                        Donate
+                    </div>
+                </button>
+            </li>
+        </ul>
+
+        <!-- Machine Learning fake -->
+        <div class="machine-learning">
+            <div class="machine-learning-content">
+                <div class="close-modal">
+                    <a onclick="CloseMachineLearning();">
+                        <i class="ph-caret-up-thin"></i>
+                    </a>
+                </div>
+
+                <hr>
+
+                <div class="machine-learning-element">
+                    <div class="columns">
+                        <div class="column">
+                            <p class="digitalfont">Elemento Principal</p>
+                            <div class="clear10x"></div>
+                            <img src="einstein/inspirations/element.png">
+                        </div>
+
+                        <div class="column is-5">
+                            <p class="digitalfont">Padrão de Cores</p>
+                            <div class="clear10x"></div>
+                            <form action="" method="post">
+                                <input 
+                                       class="input is-primary" 
+                                       data-jscolor="{}" 
+                                       value="<?php echo $aiData['primaryColor1']; ?>">
+                                <div class="clear20x"></div>
+
+                                <input 
+                                       class="input is-primary" 
+                                       data-jscolor="{}" 
+                                       value="<?php echo $aiData['primaryColor2']; ?>">
+                                <div class="clear20x"></div>
+
+                                <input 
+                                       class="input is-primary" 
+                                       data-jscolor="{}" 
+                                       value="<?php echo $aiData['primaryColor3']; ?>">
+                                <div class="clear20x"></div>
+
+                                <input 
+                                       class="input is-primary" 
+                                       data-jscolor="{}" 
+                                       value="<?php echo $aiData['primaryColor4']; ?>">
+                                <div class="clear20x"></div>
+
+                                <input 
+                                       class="input" 
+                                       data-jscolor="{}" 
+                                       value="<?php echo $aiData['primaryColor5']; ?>">
+                                <div class="clear20x"></div>
+
+                                <button type="submit" class="button" name="update">ENSINAR</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Select Inspirations -->
+        <div class="inspirations">
+            <p class="inspiration-info">Einsteins inspired by: </p>
+            <hr>
+
+            <h1 class="title is-1 color3">Inspirations<span></span></h1>
+            <p class="digitalfont">
+                Inspirações são: estilos visuais para a Inteligência Artificial usar como referência na criação das artes. Cada inspiração tem características específicas e são diferentes em composição, textura, fontes e efeitos visuais. Escolha uma inspiração abaixo:
+            </p>
+            <div class="clear30x"></div>
+            <ul class="select-inspiration">
+                <li>
+                    <a 
+                       class="activate-inspiration"
+                       href="einstein/inspirations/about-diffusion.png"
+                       data-caption="<a href='act' class='button is-normal is-rounded'>Activate</>" 
+                       data-fancybox>Diffusion
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ai generated art -->
+        <script src="einstein/inspirations/diffusion.js"></script>
+        <script src="ui.js"></script>
+    </body>
+</html>
