@@ -56,7 +56,6 @@ RenderElement();
 // ............................................
 function RenderElement(){
     const thumbnail = localStorage.getItem('thumbnail');
-
     const previewImage = document.getElementById('preview');
 
     if (thumbnail) {
@@ -68,7 +67,11 @@ function RenderElement(){
     elementTarget = new Image();
     elementTarget.src = thumbnail;
     elementTarget.onload = () =>{
-        ctxElement.drawImage(elementTarget, 0, 0, 1080, 1080);
+        var width = elementTarget.naturalWidth; 
+        var height = elementTarget.naturalHeight;
+        ctxElement.translate(artboard.width/2, artboard.height/2);
+        ctxElement.drawImage(elementTarget, -elementTarget.width/2, -elementTarget.height/2, width, height);
+        ctxElement.translate(-artboard.width/2,-artboard.height/2);
     }
 }
 

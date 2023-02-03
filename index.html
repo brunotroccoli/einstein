@@ -77,11 +77,11 @@
             </li>
 
             <li>
-                <button onclick="Dashboard();">
+                <button onclick="Support();">
                     <div class="tools-button">
                         <i class="ph-dots-nine-thin"></i>
                         <br>
-                        Donate
+                        Support
                     </div>
                 </button>
             </li>
@@ -100,22 +100,47 @@
 
                 <div class="machine-learning-element">
                     <div class="columns">
-                        <div class="column">
-                            <p class="digitalfont">Elemento Principal</p>
-                            <div class="clear10x"></div>
-                            <img id="preview" src="" alt="thumbnail">
-                            <div class="clear20x"></div>
-                            <div class="machine-learning-addelement">
-                                <input type="file" id="thumbnail" class="input is-primary">
-                                <div class="has-text-center">
-                                    <div class="clear10x"></div>
-                                    <button type="submit" class="button" onclick="Imagine();">add image</button>
+                        <div class="column is-4">
+                            <p class="digitalfont">Main Element</p>
+                            <div class="clear10x"></div>                            
+                            <img id="preview" src="" onerror="this.src='einstein/favicon.png'; this.onerror='';"/>
+                            <div class="machine-learning-addelement" id="file-with-js">
+                                <div class="file has-name is-dark">
+                                    <label class="file-label">
+                                        <input class="file-input" type="file" name="resume" id="thumbnail">
+                                        <span class="file-cta">
+                                            <span class="file-icon">
+                                                <i class="ph-image-thin"></i>
+                                            </span>
+                                            <span class="file-label">
+                                                Choose an element
+                                            </span>
+                                        </span>
+                                        <span class="file-name">
+                                            Size 1080x1080
+                                        </span>
+                                    </label>
+                                </div>
+
+
+                                <div class="has-text-right">
+                                    <div class="clear20x"></div>
+                                    <button 
+                                            type="button" 
+                                            class="button is-warning is-light" 
+                                            onclick="Clear();">CLEAR</button>
+                                    <button 
+                                            type="submit" 
+                                            class="button is-black" 
+                                            onclick="Imagine();">ADD</button>
+
+                                    <div class="clear20x"></div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="column is-5">
-                            <p class="digitalfont">Padrão de Cores</p>
+                        <div class="column is-3">
+                            <p class="digitalfont">Main Colors</p>
                             <div class="clear10x"></div>
                             <form action="" method="post">
                                 <input 
@@ -148,8 +173,20 @@
                                        value="<?php echo $aiData['primaryColor5']; ?>">
                                 <div class="clear20x"></div>
 
-                                <button type="submit" class="button" name="update">add colors</button>
+                                <div class="has-text-right">
+                                    <button type="submit" class="button" name="update">add colors</button>
+                                </div>
                             </form>
+                        </div>
+
+                        <div class="column">
+                            <p class="digitalfont">How It Works</p>
+                            <div class="clear10x"></div>
+
+                            <strong>Main Element</strong>
+                            <p>Insert a image with 1080px x 1080px in png transparent format to best results. You can remove the background with AI online, here: <a href="https://www.photoroom.com/background-remover/" target="_blank">Remove Background Free</a></p>
+
+                            <div class="clear20x"></div>
                         </div>
                     </div>
                 </div>
@@ -159,7 +196,7 @@
 
         <!-- Select Inspirations -->
         <div class="inspirations">
-            <p class="inspiration-info">Einsteins inspired by: Diffusion</p>
+            <p class="inspiration-info">Activated: Diffusion</p>
             <hr>
 
             <h1 class="title is-1 color3">Inspirations<span></span></h1>

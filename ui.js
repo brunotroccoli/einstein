@@ -1,5 +1,9 @@
 // imagine
 function Imagine(){ window.location.reload(); }
+function Clear(){
+    localStorage.clear();
+    window.location.reload();
+}
 ImagineMotion();
 function ImagineMotion(){
     setTimeout(function(){ $(".imagine-motion").fadeOut(300); }, 1000);
@@ -14,11 +18,8 @@ function CloseMachineLearning(){
     $(".machine-learning").animate({ top: '-3000px'}, 400); 
     $(".machine-learning-content").hide();
 }
-function Help(){
-    alert("Em breve");
-}
-function Donate(){
-    window.location.href = "Dashboard";
+function Support(){
+    window.location.href = "support.html";
 }
 
 // keyboard functions
@@ -54,8 +55,7 @@ function Render() {
     link.click();
 }
 
-
-
+// Store image on browser after upload
 const input = document.getElementById('thumbnail');
 
 input.addEventListener('change', (event) => {
@@ -70,3 +70,32 @@ input.addEventListener('change', (event) => {
     });
 });
 
+// show name of file in upload element
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Display file name when select file
+    let fileInputs = document.querySelectorAll('.file.has-name')
+    for (let fileInput of fileInputs) {
+        let input = fileInput.querySelector('.file-input')
+        let name = fileInput.querySelector('.file-name')
+        input.addEventListener('change', () => {
+            let files = input.files
+            if (files.length === 0) {
+                name.innerText = 'No file selected'
+            } else {
+                name.innerText = files[0].name
+            }
+        })
+    }
+
+    // 2. Remove file name when form reset
+    let forms = document.getElementsByTagName('form')
+    for (let form of forms) {
+        form.addEventListener('reset', () => {
+            console.log('a')
+            let names = form.querySelectorAll('.file-name')
+            for (let name of names) {
+                name.innerText = 'No file selected'
+            }
+        })
+    }
+});
