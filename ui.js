@@ -53,3 +53,20 @@ function Render() {
     link.href = artboardCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
     link.click();
 }
+
+
+
+const input = document.getElementById('thumbnail');
+
+input.addEventListener('change', (event) => {
+    const image = event.target.files[0];
+
+    const reader = new FileReader();
+
+    reader.readAsDataURL(image);
+
+    reader.addEventListener('load', () => {
+        localStorage.setItem('thumbnail', reader.result);
+    });
+});
+

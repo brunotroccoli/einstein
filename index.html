@@ -103,7 +103,15 @@
                         <div class="column">
                             <p class="digitalfont">Elemento Principal</p>
                             <div class="clear10x"></div>
-                            <img src="einstein/inspirations/element.png">
+                            <img id="preview" src="" alt="thumbnail">
+                            <div class="clear20x"></div>
+                            <div class="machine-learning-addelement">
+                                <input type="file" id="thumbnail" class="input is-primary">
+                                <div class="has-text-center">
+                                    <div class="clear10x"></div>
+                                    <button type="submit" class="button" onclick="Imagine();">add image</button>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="column is-5">
@@ -140,7 +148,7 @@
                                        value="<?php echo $aiData['primaryColor5']; ?>">
                                 <div class="clear20x"></div>
 
-                                <button type="submit" class="button" name="update">ENSINAR</button>
+                                <button type="submit" class="button" name="update">add colors</button>
                             </form>
                         </div>
                     </div>

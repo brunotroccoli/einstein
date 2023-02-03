@@ -30,7 +30,8 @@ artboard.style.backgroundColor = '#00bbee';
 
 var element = document.getElementById("element");
 var ctxElement = element.getContext('2d');
-var ctxCopywriting = element.getContext('2d');
+ctxElement.width = 2;
+ctxElement.heigh/2;
 element.width  = 1080;
 element.height = 1080;
 
@@ -43,6 +44,7 @@ element.height = 1080;
 // ............................................
 RenderGradient();
 RenderOverlay();
+RenderElement();
 
 
 // ............................................
@@ -53,10 +55,19 @@ RenderOverlay();
 // ............................................
 // ............................................
 function RenderElement(){
-    elementTarget = new Image();
-    elementTarget.src = 'einstein/inspirations/element.png';
-    elementTarget.onload = () =>{
+    const thumbnail = localStorage.getItem('thumbnail');
 
+    const previewImage = document.getElementById('preview');
+
+    if (thumbnail) {
+        previewImage.setAttribute('src', thumbnail);
+    } else {
+        previewImage.setAttribute('src', 'default.jpg');
+    }
+
+    elementTarget = new Image();
+    elementTarget.src = thumbnail;
+    elementTarget.onload = () =>{
         ctxElement.drawImage(elementTarget, 0, 0, 1080, 1080);
     }
 }
@@ -154,7 +165,7 @@ function RenderGradient(){
     console.log("Gradient Angle 2: ", aiGradientAngle2);
     console.log("Gradient Angle 3: ", aiGradientAngle3);
     console.log("Gradient Angle 4: ", aiGradientAngle4);
-    
+
     console.log("Gradient Color 1: ", PrimaryColor[aiSelectPrimaryColor1]);
     console.log("Gradient Color 2: ", PrimaryColor[aiSelectPrimaryColor2]);
 }

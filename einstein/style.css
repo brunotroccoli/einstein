@@ -279,7 +279,7 @@ input{
     padding: 40px;
 }
 .machine-learning-content{
-   display: none;
+    display: none;
 }
 .machine-learning-element img{
     border: 1px solid #ccc;
@@ -288,6 +288,10 @@ input{
 .machine-learning hr{
     border-top: 1px solid #ccc !important;
     background-color: transparent;
+}
+input[type='file'] button{
+    background-color: aliceblue !important;
+    border: 0 !important;
 }
 @media (orientation: portrait){
     .machine-learning{
