@@ -30,8 +30,6 @@ artboard.style.backgroundColor = '#00bbee';
 
 var element = document.getElementById("element");
 var ctxElement = element.getContext('2d');
-ctxElement.width = 2;
-ctxElement.heigh/2;
 element.width  = 1080;
 element.height = 1080;
 
@@ -45,7 +43,6 @@ element.height = 1080;
 RenderGradient();
 RenderOverlay();
 RenderElement();
-
 
 // ............................................
 // ............................................
@@ -114,7 +111,7 @@ $ai_Draw2PosY = rand(2, 1080);
 
 "normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"
 
-?> */
+*/
 const GlobalAlpha = [];
 GlobalAlpha[0] = "0.1";
 GlobalAlpha[1] = "0.2";
