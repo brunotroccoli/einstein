@@ -294,8 +294,9 @@ input{
 }
 @media (orientation: portrait){
     .machine-learning{
-        width: 0;
-        left: -200px;
+        width: 100%;
+        right: 0;
+        top: -3000px;
         height: 100vh;
         background-color: #bbb;
         position: fixed;
@@ -359,7 +360,9 @@ ui / inspiration
 }
 @media (orientation: portrait){
     .inspirations{
-        padding-left: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
         width: 100%;
-        padding-top: 700px;
+        padding-top: 390px;
+        padding-bottom: 200px;
     }
