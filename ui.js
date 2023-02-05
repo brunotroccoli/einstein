@@ -1,15 +1,11 @@
-// imagine
+// Reload 
 function Imagine(){ window.location.reload(); }
-function Clear(){
-    localStorage.clear();
-    window.location.reload();
-}
 ImagineMotion();
 function ImagineMotion(){
     setTimeout(function(){ $(".imagine-motion").fadeOut(300); }, 1000);
 }
 
-// tools
+// Menu
 function MachineLearning(){
     $(".machine-learning").animate({ top: '0px'}, 400); 
     $(".machine-learning-content").delay(500).fadeIn();
@@ -22,7 +18,7 @@ function Support(){
     window.location.href = "support.html";
 }
 
-// keyboard functions
+// Keyboard functions
 $('html').keyup(function(e){
     // remove object when press delete
     if(e.keyCode == 46) {
@@ -40,7 +36,7 @@ $('html').keyup(function(e){
     }
 });
 
-// render image to png
+// Render image to png
 function Render() {
     var artboardCanvas = document.getElementById('artboard');
     var elementCanvas = document.getElementById('element');
@@ -66,11 +62,17 @@ input.addEventListener('change', (event) => {
     reader.readAsDataURL(image);
 
     reader.addEventListener('load', () => {
-        localStorage.setItem('thumbnail', reader.result);
+        localStorage.setItem('MainElement', reader.result);
     });
 });
 
-// show name of file in upload element
+// Remove Storage image on browser
+function Clear(){
+    localStorage.removeItem("MainElement");
+    window.location.reload();
+}
+
+// Show name of file in upload element
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Display file name when select file
     let fileInputs = document.querySelectorAll('.file.has-name')
@@ -91,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let forms = document.getElementsByTagName('form')
     for (let form of forms) {
         form.addEventListener('reset', () => {
-            console.log('a')
             let names = form.querySelectorAll('.file-name')
             for (let name of names) {
                 name.innerText = 'No file selected'
@@ -99,3 +100,41 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 });
+
+// Show storage main colors
+ShowMainColors();
+function ShowMainColors(){
+    var PrimaryColor1 = localStorage.getItem("PrimaryColor1Key");
+    var PrimaryColor2 = localStorage.getItem("PrimaryColor2Key");
+    var PrimaryColor3 = localStorage.getItem("PrimaryColor3Key");
+    var PrimaryColor4 = localStorage.getItem("PrimaryColor4Key");
+    var PrimaryColor5 = localStorage.getItem("PrimaryColor5Key");
+    document.getElementById("addPrimaryColor1").value = PrimaryColor1;
+    document.getElementById("addPrimaryColor2").value = PrimaryColor2;
+    document.getElementById("addPrimaryColor3").value = PrimaryColor3;
+    document.getElementById("addPrimaryColor4").value = PrimaryColor4;
+    document.getElementById("addPrimaryColor5").value = PrimaryColor5;
+}
+
+// Storage variables with color HEX on browser
+function StorageColors(){
+    window.location.reload();
+
+    let storagePrimaryColor1 = document.getElementById("addPrimaryColor1").value;
+    let storagePrimaryColor2 = document.getElementById("addPrimaryColor2").value;
+    let storagePrimaryColor3 = document.getElementById("addPrimaryColor3").value;
+    let storagePrimaryColor4 = document.getElementById("addPrimaryColor4").value;
+    let storagePrimaryColor5 = document.getElementById("addPrimaryColor5").value;
+
+    var PrimaryColor1 = storagePrimaryColor1;
+    var PrimaryColor2 = storagePrimaryColor2;
+    var PrimaryColor3 = storagePrimaryColor3;
+    var PrimaryColor4 = storagePrimaryColor4;
+    var PrimaryColor5 = storagePrimaryColor5;
+
+    localStorage.setItem("PrimaryColor1Key", PrimaryColor1);
+    localStorage.setItem("PrimaryColor2Key", PrimaryColor2);
+    localStorage.setItem("PrimaryColor3Key", PrimaryColor3);
+    localStorage.setItem("PrimaryColor4Key", PrimaryColor4);
+    localStorage.setItem("PrimaryColor5Key", PrimaryColor5);
+}
