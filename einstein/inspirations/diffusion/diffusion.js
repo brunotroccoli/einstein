@@ -19,6 +19,9 @@ aiColor[3] = PrimaryColor4;
 aiColor[4] = PrimaryColor5;
 var aiSelectPrimaryColor1 = Math.floor(Math.random() * aiColor.length);
 var aiSelectPrimaryColor2 = Math.floor(Math.random() * aiColor.length);
+var aiSelectPrimaryColor3 = Math.floor(Math.random() * aiColor.length);
+var aiSelectPrimaryColor4 = Math.floor(Math.random() * aiColor.length);
+var aiSelectPrimaryColor5 = Math.floor(Math.random() * aiColor.length);
 
 // ............................................
 // ............................................
@@ -35,6 +38,7 @@ artboard.style.backgroundColor = '#00bbee';
 
 var element = document.getElementById("element");
 var ctxElement = element.getContext('2d');
+var ctxElementX = element.getContext('2d');
 element.width  = 1080;
 element.height = 1080;
 
@@ -47,7 +51,7 @@ element.height = 1080;
 // ............................................
 RenderGradient();
 RenderOverlay();
-RenderElement();
+RefineFx();
 
 // ............................................
 // ............................................
@@ -71,6 +75,8 @@ function RenderElement(){
     elementTarget.onload = () =>{
         var width = elementTarget.naturalWidth; 
         var height = elementTarget.naturalHeight;
+
+        RefineLight();
         ctxElement.translate(artboard.width/2, artboard.height/2);
         ctxElement.drawImage(elementTarget, -elementTarget.width/2, -elementTarget.height/2, width, height);
         ctxElement.translate(-artboard.width/2,-artboard.height/2);
@@ -80,30 +86,27 @@ function RenderElement(){
 // ............................................
 // ............................................
 
-// DRAWS
+// REFINE
 
 // ............................................
 // ............................................
-/* <?php
-
-$ai_Draw1PosX = rand(2, 1080);
-$ai_Draw1PosY = rand(2, 1080);
-$ai_Draw2PosX = rand(2, 1080);
-$ai_Draw2PosY = rand(2, 1080);
-
-?>
-
-    function RenderDraws(){
-    ctxElement.fillStyle = "<?php echo $ai_SelectColor1 ?>"; //red
+function RefineLight(){
+    ctxElement.filter = 'blur(90px)';
+    ctxElement.fillStyle = aiColor[aiSelectPrimaryColor3];
     ctxElement.beginPath();
-    ctxElement.arc(<?php echo $ai_Draw1PosX ?>, <?php echo $ai_Draw1PosY ?>, 250, 0, Math.PI*2,true);
-    ctxElement.fill();
-
-    ctxElement.fillStyle = "<?php echo $ai_SelectColor2 ?>"; //blue
-    ctxElement.beginPath();
-    ctxElement.arc(<?php echo $ai_Draw2PosX ?>, <?php echo $ai_Draw2PosY ?>, 180, 0, Math.PI*2,true);
-    ctxElement.fill();
-} */
+    ctxElement.arc(540, 600, 380, 0, Math.PI*2, true);
+    ctxElement.fill()
+    ctxElement.filter = 'blur(0px)';
+}
+function RefineFx(){
+    elementFx = new Image();
+    elementFx.src = "einstein/inspirations/diffusion/particle001.png";
+    elementFx.onload = () =>{
+        RenderElement();
+        ctxElement.filter = 'opacity(0)';
+        ctxElement.drawImage(elementFx, 0, 0, 1080, 1080);
+    }
+}
 
 // ............................................
 // ............................................

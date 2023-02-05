@@ -108,15 +108,16 @@ a:hover{
 }
 .canvas{
     position: absolute;
-    max-width: auto;
+    max-width: auto !important;
     height: 100vh;
     right: 125px;
 }
-#element{ z-index: 2; }
+
 #artboard{
     z-index: 1;
     border-left: 1px solid #ddd;
 }
+#element{ z-index: 2; }
 @media (orientation: portrait){
     .canvas{
         width: 100%;
