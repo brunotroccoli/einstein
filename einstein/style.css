@@ -61,6 +61,24 @@ shortcuts
     letter-spacing: 10px;
 }
 
+.grid-2{
+  display: grid;
+  grid-template-columns: 40% auto;
+}
+/* .....................................
+
+bulma fix
+
+..................................... */
+button{
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+}
+.fix-title-text{
+    margin-top: -15px !important;
+}
+
 /* .....................................
 
 defaults
@@ -80,29 +98,6 @@ body{
     text-transform: uppercase;
     font-size: 10px;
 }
-@media (orientation: portrait){
-
-}
-
-/* .....................................
-
-bulma fix
-
-..................................... */
-button{
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-}
-.fix-title-text{
-    margin-top: -15px !important;
-}
-
-/* .....................................
-
-default
-
-..................................... */
 a{
     color: var(--color2) !important;
     text-decoration: underline;
@@ -117,7 +112,6 @@ a:hover{
     height: 100vh;
     right: 125px;
 }
-#copywriting { z-index: 3; }
 #element{ z-index: 2; }
 #artboard{
     z-index: 1;
@@ -151,6 +145,48 @@ a:hover{
         border: 0 !important;
     }
 }
+
+/* .....................................
+
+index
+
+..................................... */
+#einstein-logo{
+    background-color: #ddd;
+    border-bottom-right-radius: 10px;
+    padding: 30px;
+}
+.starting{
+    padding-left: 60px;
+    padding-top: 60px;
+}
+.starting-about{
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #666;
+}
+.starting hr{
+    background-color: transparent !important;
+    border-top: 1px dotted lightsalmon;
+}
+.starting-select{
+    padding-right: 40px;
+    padding-top: 30px;
+}
+.starting-option{
+    border: 1px dotted #ddd;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    height: 180px;
+}
+.starting a i{
+    font-size: 50px;
+}
+.starting a{
+    text-decoration: none !important;
+}
+
 
 /* .....................................
 

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+    <body>
+        <h1>Input and Display Message</h1>
+
+        <p>Enter a message</p>
+
+        <input type="text" id="addPrimaryColor1" class="input"><br>
+        <input type="text" id="addPrimaryColor2" ><br>
+        <input type="text" id="addPrimaryColor3" ><br>
+        <input type="text" id="addPrimaryColor4" ><br>
+        <input type="text" id="addPrimaryColor5" ><br>
+        <button onclick="displayMessage()">Click me</button>
+
+
+        <p id="showinputhere"></p>
+        <p id="show"></p>
+
+        <script>
+            show();
+            function show(){
+                var PrimaryColor1 = localStorage.getItem("someVarKey");
+                document.getElementById("show").innerHTML = "Color 1: " + PrimaryColor1;
+            }
+            function displayMessage(){
+                window.location.reload();
+                let storagePrimaryColor1 = document.getElementById("addPrimaryColor1").value;
+
+                var PrimaryColor1 = storagePrimaryColor1;
+                localStorage.setItem("someVarKey", PrimaryColor1);
+            }
+        </script>
+
+    </body>
+</html>
