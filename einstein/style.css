@@ -101,7 +101,7 @@ body{
 a{
     color: var(--color2) !important;
     text-decoration: underline;
-    transition: color 1s ease-out;
+    transition: color .5s ease-out;
 }
 a:hover{
     color: var(--color5) !important;
@@ -167,6 +167,9 @@ index
 }
 .starting a{
     text-decoration: none !important;
+}
+.starting-select a div:hover{
+    background-color: #ddd;
 }
 
 
