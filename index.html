@@ -26,189 +26,103 @@
     </head>
 
     <body>
-
-        <!-- imagine motion -->
-        <div class="imagine-motion">
-            <div class="load">
-                <span class="loader"></span>
-            </div>
-        </div>
-
-        <!-- ai create -->
-        <canvas id="element"  class="canvas"></canvas>
-        <canvas id="artboard" class="canvas"></canvas>
-
-        <!-- UI -->
-        <ul class="tools">
-            <li>
-                <button onclick="Imagine();">
-                    <div class="tools-button">
-                        <i class="ph-atom-thin"></i>
-                        <br>
-                        Imagine
-                    </div>
-                </button>
-            </li>
-
-            <li>
-                <button onclick="MachineLearning();">
-                    <div class="tools-button">
-                        <i class="ph-cpu-thin"></i>
-                        <br>
-                        Design
-                    </div>
-                </button>
-            </li>
-
-            <li>
-                <button onclick="Render();">
-                    <div class="tools-button">
-                        <i class="ph-image-thin"></i>
-                        <br>
-                        Export
-                    </div>
-                </button>
-            </li>
-
-            <li>
-                <button onclick="Support();">
-                    <div class="tools-button">
-                        <i class="ph-dots-nine-thin"></i>
-                        <br>
-                        Support
-                    </div>
-                </button>
-            </li>
-        </ul>
-
-        <!-- Machine Learning fake -->
-        <div class="machine-learning">
-            <div class="machine-learning-content">
-                <div class="machine-learning-content-close">
-                    <a onclick="CloseMachineLearning();">
-                        <i class="ph-caret-up-thin"></i>
-                    </a>
+        <section>
+            <div class="grid-2">
+                <div>
+                    <img src="einstein/element-example.png" id="einstein-logo">
                 </div>
 
-                <div class="machine-learning-element">
-                    <div class="columns">
+                <div class="starting">
+                    <h1 class="title is-1 color5">Welcome to <span class="color4">Einstein</span></h1>
+                    <hr>
+                    <p class="starting-about">
+                        Einstein is a simple tool to help you make arts. You can insert a main element
+                        <br>and Einstein create arts automatically. It's free. Try now:
+                    </p>
 
-                        <!-- upload main element -->
-                        <div class="column is-4">
-                            <p class="digitalfont">Main Element</p>
-                            <div class="clear10x"></div>                            
-                            <img id="preview" src="" onerror="this.src='einstein/favicon.png'; this.onerror='';"/>
-                            <div class="machine-learning-addelement" id="file-with-js">
-                                <div class="file has-name is-dark">
-                                    <label class="file-label">
-                                        <input class="file-input" type="file" name="resume" id="thumbnail">
-                                        <span class="file-cta">
-                                            <span class="file-icon">
-                                                <i class="ph-image-thin"></i>
-                                            </span>
-                                            <span class="file-label">
-                                                Choose an element
-                                            </span>
-                                        </span>
-                                        <span class="file-name">
-                                            Size 1080x1080
-                                        </span>
-                                    </label>
-                                </div>
+                    <div class="starting-select">
+                        <div class="columns">
+                            <div class="column">
+                                <a onclick="aiStorageColors();">
+                                    <div class="starting-option">
+                                        <i class="ph-palette-thin"></i>
+                                        <br>
+                                        Create a new art
+                                    </div>
+                                </a>
+                            </div>
 
-                                <div class="has-text-right">
-                                    <div class="clear20x"></div>
-                                    <button 
-                                            type="button" 
-                                            class="button is-warning is-light" 
-                                            onclick="Clear();">REMOVE ELEMENT</button>
-                                    <button 
-                                            type="submit" 
-                                            class="button is-black" 
-                                            onclick="Imagine();">ADD ELEMENT</button>
-                                    <div class="clear20x"></div>
-                                </div>
+                            <div class="column">
+<!--
+                                <a>
+                                    <div class="starting-option">
+                                        <i class="ph-sketch-logo-thin"></i>
+                                        <br>
+                                        New Art with Main Element
+                                    </div>
+                                </a>
+-->
+                            </div>
+
+                            <div class="column">
+<!--
+                                <a>
+                                    <div class="starting-option">
+                                        <i class="ph-file-image-thin"></i>
+                                        <br>
+                                        Remove Background
+                                    </div>
+                                </a>
+-->
                             </div>
                         </div>
-
-                        <!-- set main colors -->
-                        <div class="column is-3">
-                            <p class="digitalfont">Main Colors</p>
-                            <div class="clear10x"></div>
-                            <div>
-                                <input 
-                                       id="addPrimaryColor1"
-                                       class="input is-primary" 
-                                       data-jscolor="{}">
-                                <div class="clear20x"></div>
-
-                                <input 
-                                       id="addPrimaryColor2"
-                                       class="input is-primary" 
-                                       data-jscolor="{}">
-                                <div class="clear20x"></div>
-
-                                <input 
-                                       id="addPrimaryColor3"
-                                       class="input is-primary" 
-                                       data-jscolor="{}">
-                                <div class="clear20x"></div>
-
-                                <input 
-                                       id="addPrimaryColor4"
-                                       class="input is-primary" 
-                                       data-jscolor="{}">
-                                <div class="clear20x"></div>
-
-                                <input 
-                                       id="addPrimaryColor5"
-                                       class="input" 
-                                       data-jscolor="{}" >
-                                <div class="clear20x"></div>
-
-                                <div class="has-text-right">
-                                    <button type="submit" class="button" onclick="StorageColors();">add colors</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="column">
-                            <p class="digitalfont">How It Works</p>
-                            <div class="clear10x"></div>
-
-                            <strong>Main Element</strong>
-                            <p>Insert a image with 1080px x 1080px in png transparent format to best results. You can remove the background with AI online, here: <a href="https://www.photoroom.com/background-remover/" target="_blank">Remove Background Free</a></p>
-
-                            <div class="clear20x"></div>
-                        </div>
-
-                        <div class="column is-1"></div>
                     </div>
                 </div>
-
             </div>
+        </section>
+
+<!--
+        <section class="section">
+            <div class="has-text-centered">
+                <h1 class="title is-1 color5">Showcase</h1>
+                <h1 class="subtitle is-4">Arts created by Einstein</h1>
+            </div>
+        </section>
+-->
+
+        <div>
+            <input id="addPrimaryColor1" value="#cccccc" type="hidden">
+            <input id="addPrimaryColor2" value="#000000" type="hidden">
+            <input id="addPrimaryColor3" value="#3a3a3a" type="hidden">
+            <input id="addPrimaryColor4" value="#ffffff" type="hidden">
+            <input id="addPrimaryColor5" value="#ffa07a" type="hidden">
         </div>
 
-        <!-- Select Inspirations -->
-        <div class="inspirations">
-            <p class="inspiration-info">Activated: Diffusion</p>
-            <hr>
+            <script type="text/javascript">
+                // Storage variables with color HEX on browser
+                function aiStorageColors(){
+                    window.location.reload();
 
-            <h1 class="title is-1 color3">Inspirations<span></span></h1>
-            <ul class="select-inspiration">
-                <li>
-                    <a 
-                       class="activate-inspiration"
-                       href="einstein/inspirations/diffusion/diffusion-about.png"
-                       data-caption="<a class='button is-normal is-rounded'>Activate</>" 
-                       data-fancybox>Diffusion
-                    </a>
-                </li>
-            </ul>
-        </div>
+                    let storagePrimaryColor1 = document.getElementById("addPrimaryColor1").value;
+                    let storagePrimaryColor2 = document.getElementById("addPrimaryColor2").value;
+                    let storagePrimaryColor3 = document.getElementById("addPrimaryColor3").value;
+                    let storagePrimaryColor4 = document.getElementById("addPrimaryColor4").value;
+                    let storagePrimaryColor5 = document.getElementById("addPrimaryColor5").value;
 
-        <!-- ai generated art -->
-        <script src="einstein/inspirations/diffusion/diffusion.js"></script>
-        <script src="ui.js"></script>
-    </body>
-</html>
+                    var PrimaryColor1 = storagePrimaryColor1;
+                    var PrimaryColor2 = storagePrimaryColor2;
+                    var PrimaryColor3 = storagePrimaryColor3;
+                    var PrimaryColor4 = storagePrimaryColor4;
+                    var PrimaryColor5 = storagePrimaryColor5;
+
+                    localStorage.setItem("PrimaryColor1Key", PrimaryColor1);
+                    localStorage.setItem("PrimaryColor2Key", PrimaryColor2);
+                    localStorage.setItem("PrimaryColor3Key", PrimaryColor3);
+                    localStorage.setItem("PrimaryColor4Key", PrimaryColor4);
+                    localStorage.setItem("PrimaryColor5Key", PrimaryColor5);
+                    
+                    window.location.href = "einstein.html";
+                }
+            </script>
+            </body>
+        </html>

@@ -364,18 +364,6 @@ ui / inspiration
     background-color: transparent;
     width: 70%;
 }
-.inspiration-info{
-    width: 200px;
-    font-weight: bold;
-    font-size: 12px;
-    color: #666;
-    background-color: var(--color5);
-    text-transform: uppercase;
-    padding: 10px;
-    border-radius: 5px;
-    letter-spacing: 1px;
-    font-family: 'Arial', sans-serif;
-}
 .select-inspiration{
     margin: 0 auto;
 }
