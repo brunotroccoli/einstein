@@ -12,14 +12,14 @@
         <link rel="icon" href="einstein/favicon.png">
 
         <!-- css libraries -->
-        <link rel="stylesheet" href="libraries/bulma.min.css">
-        <link rel="stylesheet" href="libraries/phosphor-icons.css">
-        <link rel="stylesheet" href="libraries/fancybox.css"/>
+        <link rel="stylesheet" href="einstein/libraries/bulma.min.css">
+        <link rel="stylesheet" href="einstein/libraries/phosphor-icons.css">
+        <link rel="stylesheet" href="einstein/libraries/fancybox.css"/>
 
         <!-- js libraries -->
-        <script src="libraries/jquery.min.js"></script>
-        <script src="libraries/jscolor.min.js"></script>
-        <script src="libraries/fancybox.umd.js"></script>
+        <script src="einstein/libraries/jquery.min.js"></script>
+        <script src="einstein/libraries/jscolor.min.js"></script>
+        <script src="einstein/libraries/fancybox.umd.js"></script>
 
         <!-- custom css -->
         <link rel="stylesheet" href="einstein/style.css">
@@ -84,16 +84,16 @@
         <!-- Machine Learning fake -->
         <div class="machine-learning">
             <div class="machine-learning-content">
-                <div class="close-modal">
+                <div class="machine-learning-content-close">
                     <a onclick="CloseMachineLearning();">
                         <i class="ph-caret-up-thin"></i>
                     </a>
                 </div>
 
-                <hr>
-
                 <div class="machine-learning-element">
                     <div class="columns">
+
+                        <!-- upload main element -->
                         <div class="column is-4">
                             <p class="digitalfont">Main Element</p>
                             <div class="clear10x"></div>                            
@@ -116,54 +116,63 @@
                                     </label>
                                 </div>
 
-
                                 <div class="has-text-right">
                                     <div class="clear20x"></div>
                                     <button 
                                             type="button" 
                                             class="button is-warning is-light" 
-                                            onclick="Clear();">CLEAR</button>
+                                            onclick="Clear();">REMOVE ELEMENT</button>
                                     <button 
                                             type="submit" 
                                             class="button is-black" 
-                                            onclick="Imagine();">ADD</button>
-
+                                            onclick="Imagine();">ADD ELEMENT</button>
                                     <div class="clear20x"></div>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- set main colors -->
                         <div class="column is-3">
                             <p class="digitalfont">Main Colors</p>
                             <div class="clear10x"></div>
+                            <p id="showColor1"></p>
+                            <p id="showColor2"></p>
+                            <p id="showColor3"></p>
+                            <p id="showColor4"></p>
+                            <p id="showColor5"></p>
                             <div>
                                 <input 
+                                       id="addPrimaryColor1"
                                        class="input is-primary" 
                                        data-jscolor="{}">
                                 <div class="clear20x"></div>
 
                                 <input 
+                                       id="addPrimaryColor2"
                                        class="input is-primary" 
                                        data-jscolor="{}">
                                 <div class="clear20x"></div>
 
                                 <input 
+                                       id="addPrimaryColor3"
                                        class="input is-primary" 
                                        data-jscolor="{}">
                                 <div class="clear20x"></div>
 
                                 <input 
+                                       id="addPrimaryColor4"
                                        class="input is-primary" 
                                        data-jscolor="{}">
                                 <div class="clear20x"></div>
 
                                 <input 
+                                       id="addPrimaryColor5"
                                        class="input" 
                                        data-jscolor="{}" >
                                 <div class="clear20x"></div>
 
                                 <div class="has-text-right">
-                                    <button type="submit" class="button" name="update">add colors</button>
+                                    <button type="submit" class="button" onclick="StorageColors();">add colors</button>
                                 </div>
                             </div>
                         </div>
@@ -177,6 +186,8 @@
 
                             <div class="clear20x"></div>
                         </div>
+
+                        <div class="column is-1"></div>
                     </div>
                 </div>
 

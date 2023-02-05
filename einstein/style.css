@@ -79,24 +79,6 @@ button{
     margin-top: -15px !important;
 }
 
-.grid-2{
-  display: grid;
-  grid-template-columns: 40% auto;
-}
-/* .....................................
-
-bulma fix
-
-..................................... */
-button{
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-}
-.fix-title-text{
-    margin-top: -15px !important;
-}
-
 /* .....................................
 
 defaults
