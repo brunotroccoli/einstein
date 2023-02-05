@@ -5,15 +5,20 @@
 
 // ............................................
 // ............................................
+var PrimaryColor1 = localStorage.getItem("PrimaryColor1Key");
+var PrimaryColor2 = localStorage.getItem("PrimaryColor2Key");
+var PrimaryColor3 = localStorage.getItem("PrimaryColor3Key");
+var PrimaryColor4 = localStorage.getItem("PrimaryColor4Key");
+var PrimaryColor5 = localStorage.getItem("PrimaryColor5Key");
 
-const PrimaryColor = [];
-PrimaryColor[0] = "#000000";
-PrimaryColor[1] = "#662D91";
-PrimaryColor[2] = "#FF33A3";
-PrimaryColor[3] = "#03FF6E";
-PrimaryColor[4] = "#F3F6F7";
-var aiSelectPrimaryColor1 = Math.floor(Math.random() * PrimaryColor.length);
-var aiSelectPrimaryColor2 = Math.floor(Math.random() * PrimaryColor.length);
+const aiColor = [];
+aiColor[0] = PrimaryColor1;
+aiColor[1] = PrimaryColor2;
+aiColor[2] = PrimaryColor3;
+aiColor[3] = PrimaryColor4;
+aiColor[4] = PrimaryColor5;
+var aiSelectPrimaryColor1 = Math.floor(Math.random() * aiColor.length);
+var aiSelectPrimaryColor2 = Math.floor(Math.random() * aiColor.length);
 
 // ............................................
 // ............................................
@@ -52,7 +57,7 @@ RenderElement();
 // ............................................
 // ............................................
 function RenderElement(){
-    const thumbnail = localStorage.getItem('thumbnail');
+    const thumbnail = localStorage.getItem('MainElement');
     const previewImage = document.getElementById('preview');
 
     if (thumbnail) {
@@ -156,8 +161,8 @@ function RenderGradient(){
     const aiGradientAngle4 = Math.floor(Math.random() * 1080);
 
     var gradient = ctxArtboard.createLinearGradient(aiGradientAngle1, aiGradientAngle2, aiGradientAngle3, aiGradientAngle4);
-    gradient.addColorStop(0,  PrimaryColor[aiSelectPrimaryColor1]);
-    gradient.addColorStop(1,  PrimaryColor[aiSelectPrimaryColor2]);
+    gradient.addColorStop(0,  aiColor[aiSelectPrimaryColor1]);
+    gradient.addColorStop(1,  aiColor[aiSelectPrimaryColor2]);
     ctxArtboard.fillStyle = gradient;
     ctxArtboard.fillRect(0, 0, 1080, 1080);
 
@@ -166,6 +171,6 @@ function RenderGradient(){
     console.log("Gradient Angle 3: ", aiGradientAngle3);
     console.log("Gradient Angle 4: ", aiGradientAngle4);
 
-    console.log("Gradient Color 1: ", PrimaryColor[aiSelectPrimaryColor1]);
-    console.log("Gradient Color 2: ", PrimaryColor[aiSelectPrimaryColor2]);
+    console.log("Gradient Color 1: ", aiColor[aiSelectPrimaryColor1]);
+    console.log("Gradient Color 2: ", aiColor[aiSelectPrimaryColor2]);
 }

@@ -60,6 +60,24 @@ shortcuts
     font-size: 60px !important;
     letter-spacing: 10px;
 }
+.grid-2{
+    display: grid;
+    grid-template-columns: 40% auto;
+}
+
+/* .....................................
+
+bulma fix
+
+..................................... */
+button{
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+}
+.fix-title-text{
+    margin-top: -15px !important;
+}
 
 .grid-2{
   display: grid;
@@ -117,24 +135,6 @@ a:hover{
     z-index: 1;
     border-left: 1px solid #ddd;
 }
-.modal{
-    background-color: var(--color6);
-}
-.close-modal{
-    position: absolute;
-    top: 0px;
-    width: 100%;
-    text-align: center;
-    font-size: 60px;
-}
-.close-modal a{ 
-    color: var(--color5); 
-    -webkit-transition: color .5s ease-out;
-    -moz-transition: color .5s ease-out;
-    -o-transition: color .5s ease-out;
-    transition: color .5s ease-out;
-}
-.close-modal a:hover{ color: var(--color2); }
 @media (orientation: portrait){
     .canvas{
         width: 100%;
@@ -295,7 +295,6 @@ ui / tools
 ui / machine learning
 
 ..................................... */
-
 input{
     background-color: #ccc !important;
     border-radius: 0 !important;
@@ -314,12 +313,33 @@ input{
     z-index: 99;
     padding: 40px;
 }
+.machine-learning-content-close a{
+    background-color: var(--color5);
+    padding: 10px;
+    height: 70px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-decoration: none !important;
+    font-size: 40px;
+    -webkit-transition: color .5s ease-out;
+    -moz-transition: color .5s ease-out;
+    -o-transition: color .5s ease-out;
+    transition: color .5s ease-out;
+    -webkit-transition: background 1s ease-out;
+    -moz-transition: background 1s ease-out;
+    -o-transition: background 1s ease-out;
+    transition: background 1s ease-out;
+}
+.machine-learning-content-close a:hover{
+    background-color: var(--color4);
+}
 .machine-learning-content{
     display: none;
 }
 .machine-learning-element img{
     border: 1px solid #ccc;
-    background-color: lawngreen;
+    background-color: var(--color5);
 }
 .machine-learning hr{
     border-top: 1px solid #ccc !important;
