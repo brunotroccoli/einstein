@@ -17,6 +17,7 @@ aiColor[1] = PrimaryColor2;
 aiColor[2] = PrimaryColor3;
 aiColor[3] = PrimaryColor4;
 aiColor[4] = PrimaryColor5;
+aiColor[5] = "transparent";
 var aiSelectPrimaryColor1 = Math.floor(Math.random() * aiColor.length);
 var aiSelectPrimaryColor2 = Math.floor(Math.random() * aiColor.length);
 var aiSelectPrimaryColor3 = Math.floor(Math.random() * aiColor.length);
@@ -30,11 +31,19 @@ var aiSelectPrimaryColor5 = Math.floor(Math.random() * aiColor.length);
 
 // ............................................
 // ............................................
+const aiCanvasColor = [];
+aiCanvasColor[0] = PrimaryColor1;
+aiCanvasColor[1] = PrimaryColor2;
+aiCanvasColor[2] = PrimaryColor3;
+aiCanvasColor[3] = PrimaryColor4;
+aiCanvasColor[4] = PrimaryColor5;
+var aiSelectBackgroundColor = Math.floor(Math.random() * aiCanvasColor.length);
+
 var artboard = document.getElementById("artboard");
 var ctxArtboard = artboard.getContext('2d');
 artboard.width  = 1080;
 artboard.height = 1080;
-artboard.style.backgroundColor = '#00bbee';
+artboard.style.backgroundColor = aiColor[aiSelectBackgroundColor];
 
 var element = document.getElementById("element");
 var ctxElement = element.getContext('2d');
@@ -61,13 +70,13 @@ RefineFx();
 // ............................................
 // ............................................
 function RenderElement(){
-    const thumbnail = localStorage.getItem('MainElement');
+   var thumbnail = localStorage.getItem('MainElement');
     const previewImage = document.getElementById('preview');
 
     if (thumbnail) {
         previewImage.setAttribute('src', thumbnail);
     } else {
-        previewImage.setAttribute('src', 'default.jpg');
+        previewImage.setAttribute('src', 'einstein/favicon.png');
     }
 
     elementTarget = new Image();

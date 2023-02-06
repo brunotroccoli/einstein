@@ -34,6 +34,17 @@ $('html').keyup(function(e){
     if(e.keyCode == 39) {
         Imagine();
     }
+    
+    // open Machine Learning panel when press arrow down
+    if(e.keyCode == 40) {
+        MachineLearning();
+    }
+    
+        // open Machine Learning panel when press arrow down
+    if(e.keyCode == 38) {
+        CloseMachineLearning();
+    }
+    
 });
 
 // Render image to png
