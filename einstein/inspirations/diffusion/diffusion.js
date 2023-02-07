@@ -100,7 +100,7 @@ function RenderElement(){
 // ............................................
 // ............................................
 function RefineLight(){
-    ctxElement.filter = 'blur(90px)';
+    ctxElement.filter = 'blur(250px)';
     ctxElement.fillStyle = aiColor[aiSelectPrimaryColor3];
     ctxElement.beginPath();
     ctxElement.arc(540, 600, 380, 0, Math.PI*2, true);
